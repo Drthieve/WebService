@@ -21,88 +21,88 @@ import java.util.Set;
 
 import static java.util.stream.Collectors.toSet;
 
-@XmlRootElement( name = "product" )
-@XmlType( propOrder = {"id", "name", "description", "quantity", "price", "categories"} )
+@XmlRootElement(name = "product")
+@XmlType(propOrder = {"identifier", "productName", "productDescription", "productQuantity", "productPrice", "productCategories"})
 public class ProductDto implements Serializable {
-    private Integer id;
-    private String name;
-    private String description;
-    private Integer quantity;
-    private BigDecimal price;
-    private Set<CategoryDto> categories;
+    private Integer identifier;
+    private String productName;
+    private String productDescription;
+    private Integer productQuantity;
+    private BigDecimal productPrice;
+    private Set<CategoryDto> productCategories;
 
     public ProductDto() {
     }
 
-    public ProductDto( Product product ) {
-        this.id = product.getId();
-        this.name = product.getName();
-        this.description = product.getDescription();
-        this.quantity = product.getQuantity();
-        this.price = product.getPrice();
-        this.categories = product.getCategories().stream()
-                .map( CategoryDto::new )
-                .collect( toSet() );
+    public ProductDto(Product product) {
+        this.identifier = product.getId();
+        this.productName = product.getName();
+        this.productDescription = product.getDescription();
+        this.productQuantity = product.getQuantity();
+        this.productPrice = product.getPrice();
+        this.productCategories = product.getCategories().stream()
+                .map(CategoryDto::new)
+                .collect(toSet());
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getIdentifier() {
+        return identifier;
     }
 
-    public void setId( Integer id ) {
-        this.id = id;
+    public void setIdentifier(Integer identifier) {
+        this.identifier = identifier;
     }
 
-    public String getName() {
-        return name;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setName( String name ) {
-        this.name = name;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public String getDescription() {
-        return description;
+    public String getProductDescription() {
+        return productDescription;
     }
 
-    public void setDescription( String description ) {
-        this.description = description;
+    public void setProductDescription(String productDescription) {
+        this.productDescription = productDescription;
     }
 
-    public Integer getQuantity() {
-        return quantity;
+    public Integer getProductQuantity() {
+        return productQuantity;
     }
 
-    public void setQuantity( Integer quantity ) {
-        this.quantity = quantity;
+    public void setProductQuantity(Integer productQuantity) {
+        this.productQuantity = productQuantity;
     }
 
-    public BigDecimal getPrice() {
-        return price;
+    public BigDecimal getProductPrice() {
+        return productPrice;
     }
 
-    public void setPrice( BigDecimal price ) {
-        this.price = price;
+    public void setProductPrice(BigDecimal productPrice) {
+        this.productPrice = productPrice;
     }
 
-    @XmlElementWrapper( name = "categories" )
-    @XmlElement( name = "category" )
-    public Set<CategoryDto> getCategories() {
-        return categories;
+    @XmlElementWrapper(name = "categories")
+    @XmlElement(name = "category")
+    public Set<CategoryDto> getProductCategories() {
+        return productCategories;
     }
 
-    public void setCategories( Set<CategoryDto> categories ) {
-        this.categories = categories;
+    public void setProductCategories(Set<CategoryDto> productCategories) {
+        this.productCategories = productCategories;
     }
 
     @Override
     public String toString() {
         return getClass().getSimpleName() + "(" +
-                "id = " + id + ", " +
-                "name = " + name + ", " +
-                "description = " + description + ", " +
-                "quantity = " + quantity + ", " +
-                "price = " + price + ", " +
-                "categories = " + categories.size() + ")";
+                "id = " + identifier + ", " +
+                "name = " + productName + ", " +
+                "description = " + productDescription + ", " +
+                "quantity = " + productQuantity + ", " +
+                "price = " + productPrice + ", " +
+                "categories = " + productCategories.size() + ")";
     }
 }

@@ -7,27 +7,35 @@ import jakarta.xml.bind.annotation.XmlType;
 
 import java.io.Serializable;
 
-@XmlRootElement( name = "cartLineItem" )
-@XmlType( propOrder = {"id", "productId", "quantity"} )
+@XmlRootElement(name = "cartLineItem")
+@XmlType(propOrder = {"id", "productId", "quantity"})
 public class CartLineItemDto implements Serializable {
+    private int quantity;
     private int id;
     private int productId;
-    private int quantity;
 
     public CartLineItemDto() {
     }
 
-    public CartLineItemDto( CartLineItem cartLineItem ) {
+    public CartLineItemDto(CartLineItem cartLineItem) {
         this.id = cartLineItem.getId();
         this.productId = cartLineItem.getProduct().getId();
         this.quantity = cartLineItem.getQuantity();
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId( int id ) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -35,16 +43,8 @@ public class CartLineItemDto implements Serializable {
         return productId;
     }
 
-    public void setProductId( int productId ) {
+    public void setProductId(int productId) {
         this.productId = productId;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity( int quantity ) {
-        this.quantity = quantity;
     }
 
     @Override

@@ -16,48 +16,48 @@ import java.util.Set;
 
 import static java.util.stream.Collectors.toSet;
 
-@XmlRootElement( name = "order" )
-@XmlType( propOrder = {"id", "status", "total", "orderLineItems"} )
+@XmlRootElement(name = "order")
+@XmlType(propOrder = {"identifier", "orderItems", "status", "total"})
 public class OrderDto implements Serializable {
-    private int id;
-    private Set<OrderLineItemDto> orderLineItems;
+    private int identifier;
+    private Set<OrderLineItemDto> orderItems;
     private OrderStatus status;
     private BigDecimal total;
 
     public OrderDto() {
     }
 
-    public OrderDto( Order order ) {
-        this.id = order.getId();
+    public OrderDto(Order order) {
+        this.identifier = order.getId();
         this.status = order.getStatus();
         this.total = order.getTotal();
-        this.orderLineItems = order.getOrderLineItems()
+        this.orderItems = order.getOrderLineItems()
                 .stream()
-                .map( OrderLineItemDto::new )
-                .collect( toSet() );
+                .map(OrderLineItemDto::new)
+                .collect(toSet());
     }
 
-    public int getId() {
-        return id;
+    public int getIdentifier() {
+        return identifier;
     }
 
-    public void setId( int id ) {
-        this.id = id;
+    public void setIdentifier(int identifier) {
+        this.identifier = identifier;
     }
 
-    public Set<OrderLineItemDto> getOrderLineItems() {
-        return orderLineItems;
+    public Set<OrderLineItemDto> getOrderItems() {
+        return orderItems;
     }
 
-    public void setOrderLineItems( Set<OrderLineItemDto> orderLineItems ) {
-        this.orderLineItems = orderLineItems;
+    public void setOrderItems(Set<OrderLineItemDto> orderItems) {
+        this.orderItems = orderItems;
     }
 
     public OrderStatus getStatus() {
         return status;
     }
 
-    public void setStatus( OrderStatus status ) {
+    public void setStatus(OrderStatus status) {
         this.status = status;
     }
 
@@ -65,15 +65,15 @@ public class OrderDto implements Serializable {
         return total;
     }
 
-    public void setTotal( BigDecimal total ) {
+    public void setTotal(BigDecimal total) {
         this.total = total;
     }
 
     @Override
     public String toString() {
         return getClass().getSimpleName() + "(" +
-                "id = " + id + ", " +
-                "orderLineItems = " + orderLineItems + ", " +
+                "id = " + identifier + ", " +
+                "orderLineItems = " + orderItems + ", " +
                 "status = " + status + ", " +
                 "total = " + total + ")";
     }
