@@ -37,10 +37,7 @@ Pour l'utilisation de l'API SOAP, importez le projet dans SOAP UI.
 
 **MySQL**
 
-Si vous utilisez une base de données MySQL :
-
 Créez un schéma de base de données et fournissez le nom d'utilisateur et le mot de passe dans persistence.xml.
-Hibernate créera automatiquement les tables pour vous.
 Exécutez DatabasePopulator.java pour peupler la base de données avec des données de test.
 
 👷‍♂️ Contributeurs
