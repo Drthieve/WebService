@@ -2,7 +2,7 @@
 
 Projet JAX-RS et JAX-WS REST et SOAP E-Commerce Web Service.
 
-#📦 Fonctionnalités
+# 📦 Fonctionnalités
 Ce service web offre un large éventail de fonctionnalités, notamment :
 
 -Filtrage
