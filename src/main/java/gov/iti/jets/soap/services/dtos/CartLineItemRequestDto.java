@@ -7,42 +7,35 @@ import jakarta.xml.bind.annotation.XmlType;
 
 import java.io.Serializable;
 
-@XmlRootElement(name = "cartLineItem")
-@XmlType(propOrder = {"productIdentifier", "amount"})
+@XmlRootElement( name = "cartLineItem" )
+@XmlType( propOrder = {"productId", "quantity"} )
 public class CartLineItemRequestDto implements Serializable {
+    private int productId;
+    private int quantity;
 
-    private int productIdentifier; // Identifier of the product
-    private int amount; // Amount of the product
-
-    // Default constructor
     public CartLineItemRequestDto() {
     }
 
-    // Getter for productIdentifier
-    public int getProductIdentifier() {
-        return productIdentifier;
+    public int getProductId() {
+        return productId;
     }
 
-    // Setter for productIdentifier
-    public void setProductIdentifier(int productIdentifier) {
-        this.productIdentifier = productIdentifier;
+    public void setProductId( int productId ) {
+        this.productId = productId;
     }
 
-    // Getter for amount
-    public int getAmount() {
-        return amount;
+    public int getQuantity() {
+        return quantity;
     }
 
-    // Setter for amount
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setQuantity( int quantity ) {
+        this.quantity = quantity;
     }
 
-    // String representation of the object
     @Override
     public String toString() {
         return getClass().getSimpleName() + "(" +
-                "productIdentifier = " + productIdentifier + ", " +
-                "amount = " + amount + ")";
+                "productIdId = " + productId + ", " +
+                "quantity = " + quantity + ")";
     }
 }

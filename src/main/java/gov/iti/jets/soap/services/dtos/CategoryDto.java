@@ -7,47 +7,46 @@ import jakarta.xml.bind.annotation.XmlType;
 
 import java.io.Serializable;
 
-@XmlRootElement(name = "category")
-@XmlType(propOrder = {"identifier", "name"})
+@XmlRootElement( name = "category" )
+@XmlType( propOrder = {"id", "name"} )
 public class CategoryDto implements Serializable {
-    private Integer identifier;
+    private Integer id;
     private String name;
 
     public CategoryDto() {
     }
 
-    public CategoryDto(int identifier, String name) {
-        this.identifier = identifier;
+    public CategoryDto( int id, String name ) {
+        this.id = id;
         this.name = name;
     }
 
-    public CategoryDto(Category category) {
-        this.identifier = category.getId();
+    public CategoryDto( Category category ) {
+        this.id = category.getId();
         this.name = category.getName();
     }
 
-    @XmlElement(name = "id")
-    public Integer getIdentifier() {
-        return identifier;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdentifier(Integer identifier) {
-        this.identifier = identifier;
+    public void setId( Integer id ) {
+        this.id = id;
     }
 
-    @XmlElement(name = "name")
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName( String name ) {
         this.name = name;
     }
 
     @Override
     public String toString() {
         return getClass().getSimpleName() + "(" +
-                "id = " + identifier + ", " +
+                "id = " + id + ", " +
                 "name = " + name + ")";
     }
+
 }
