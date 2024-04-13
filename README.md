@@ -1,9 +1,6 @@
-# Online E-commerce Web Service (REST & SOAP)
+# Web Service (REST & SOAP)
 
-Bienvenue dans le projet JAX-RS et JAX-WS REST et SOAP E-Commerce Web Service ! Ce projet vise à fournir un service web robuste pour les opérations de commerce électronique, en offrant à la fois des fonctionnalités RESTful et SOAP.
-
-# 🏛 Architecture
-Ce projet suit une architecture en couches pour assurer la modularité et la maintenabilité. Il utilise à la fois JAX-RS et JAX-WS pour fournir des interfaces d'API RESTful et SOAP qui sont des présentations différentes de la même couche de service principale.
+Projet JAX-RS et JAX-WS REST et SOAP E-Commerce Web Service.
 
 #📦 Fonctionnalités
 Ce service web offre un large éventail de fonctionnalités, notamment :
